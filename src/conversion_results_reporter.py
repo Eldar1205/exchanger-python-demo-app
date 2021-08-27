@@ -8,7 +8,5 @@ from conversion_spec import ConversionSpec
 
 class ConversionResultsReporter(ABC):
     @abstractmethod
-    async def report(
-        self, conversion_spec: ConversionSpec, results: Sequence[PositiveFloat]
-    ) -> None:
+    async def report(self, conversion_spec: ConversionSpec, results: Sequence[PositiveFloat]) -> None:
         pass

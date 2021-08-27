@@ -6,7 +6,5 @@ from conversion_spec import ConversionSpec
 
 class ConversionSpecProvider(ABC):
     @abstractmethod
-    async def provideConversionSpec(
-        self, conversion_parameters: ConversionParameters
-    ) -> ConversionSpec:
+    async def provideConversionSpec(self, conversion_parameters: ConversionParameters) -> ConversionSpec:
         pass
