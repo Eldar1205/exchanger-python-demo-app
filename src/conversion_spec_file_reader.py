@@ -8,16 +8,13 @@ from conversion_spec_provider import ConversionSpecProvider
 
 
 class ConversionSpecFileReader(ConversionSpecProvider):
-    async def provideConversionSpec(self, conversion_parameters: ConversionParameters) -> ConversionSpec:
-        source_amounts = list[PositiveFloat]()
+    async def provide_conversion_spec(self, conversion_parameters: ConversionParameters) -> ConversionSpec:
+        source_coin: Coin
+        target_coin: Coin
+        source_amounts: tuple[PositiveFloat]
+
         async with aiofiles.open(conversion_parameters.file_path) as conversion_spec_file:
-            async for index, line in asyncstdlib.enumerate(conversion_spec_file):
-                if index == 0:
-                    source_coin = Coin(line)
-                elif index == 1:
-                    target_coin = Coin(line)
-                else:
-                    source_amounts.append(PositiveFloat(line))
+            source_coin, target_coin, *source_amounts = await asyncstdlib.tuple(conversion_spec_file)
 
         return ConversionSpec(
             source_coin=source_coin,

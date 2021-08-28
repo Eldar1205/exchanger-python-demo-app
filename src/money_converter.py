@@ -11,6 +11,6 @@ class MoneyConverter:
         self.__exchangeRateProvider = exchange_rate_provider
 
     async def convert(self, spec: ConversionSpec) -> Sequence[PositiveFloat]:
-        exchangeRate = await self.__exchangeRateProvider.provide(spec.source_coin, spec.target_coin)
+        exchange_rate = await self.__exchangeRateProvider.provide(spec.source_coin, spec.target_coin)
 
-        return tuple(map(lambda x: x * exchangeRate, spec.source_amounts))
+        return tuple(map(lambda x: x * exchange_rate, spec.source_amounts))
