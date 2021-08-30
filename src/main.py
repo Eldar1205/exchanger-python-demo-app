@@ -12,9 +12,9 @@ from conversion_results_reporter import ConversionResultsReporter
 from conversion_results_typer_reporter import ConversionResultsTyperReporter
 from conversion_spec_file_reader import ConversionSpecFileReader
 from conversion_spec_provider import ConversionSpecProvider
+from currency_converter import CurrencyConverter
 from exchange_rate_provider import ExchangeRateProvider
 from exchange_rates_api_client import ExchangeRatesApiClient
-from money_converter import MoneyConverter
 
 
 async def _main(conversion_spec_file_path: Path) -> None:
@@ -23,7 +23,7 @@ async def _main(conversion_spec_file_path: Path) -> None:
     container = Container()
     container[ExchangeRateProvider] = Singleton(ExchangeRatesApiClient)  # type: ignore
     container[ConversionSpecProvider] = Singleton(ConversionSpecFileReader)  # type: ignore
-    container[MoneyConverter] = Singleton(MoneyConverter)
+    container[CurrencyConverter] = Singleton(CurrencyConverter)
     container[ConversionResultsReporter] = Singleton(ConversionResultsTyperReporter)  # type: ignore
     container[ConversionFlowExecuter] = Singleton(ConversionFlowExecuter)
 

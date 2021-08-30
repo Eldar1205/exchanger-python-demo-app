@@ -1,5 +1,5 @@
 USD
-ILS
+EUR
 13
 5
 10

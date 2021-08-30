@@ -12,4 +12,6 @@ class ConversionResultsTyperReporter(ConversionResultsReporter):
         # TODO: Is this the proper way to implement the async method such that it runs synchronously without "await"?
         # Asked in SO: https://stackoverflow.com/questions/68957729/python-implement-async-abstract-method-synchronously
         for source, dest in zip(conversion_spec.source_amounts, results):
-            typer.echo(f"{source} {conversion_spec.source_coin} -> {dest} {conversion_spec.target_coin}")
+            typer.echo(
+                f"{source} {conversion_spec.source_currency} -> {dest} {conversion_spec.target_currency}"
+            )
