@@ -60,7 +60,7 @@ The following code quality and linting solutions are used:
   * [*flake8-comprehensions*](https://github.com/adamchainz/flake8-comprehensions) - checks for misuse or lack of use of comprehensions
   * [*flake8-mutable*](https://github.com/ebeweber/flake8-mutable) - checks for mutable default parameter values Python issue
   * [*pep8-naming*](https://github.com/PyCQA/pep8-naming) - checks that names follow Python standards defined in PEP8
-  * [*flake8-simplify*] - checks for general Python best practices for simpler code(https://github.com/MartinThoma/flake8-simplify)
+  * [*flake8-simplify*](https://github.com/MartinThoma/flake8-simplify) - checks for general Python best practices for simpler code
   * [*flake8-pytest-style*](https://github.com/m-burst/flake8-pytest-style) - check that *pytest* unit tests are written according to style; **this plugin isn't relevant for this repo**
   * [*flake8-logging-format*](https://github.com/globality-corp/flake8-logging-format) - ensures logs use extra arguments and exception(); **this plugin isn't relevant for this repo**
 
