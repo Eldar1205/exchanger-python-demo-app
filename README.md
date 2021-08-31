@@ -16,6 +16,7 @@ The Exchanger app has a simple purpose: it's a CLI app for converting amounts of
     ...
 
 An example input file converting from US Dollar to Euro is provided [here](exchanger_conversion_spec.txt), and the full list of currency codes can be found [here](https://iban.com/currency-codes).
+For simplicity sake it's assumed inputs are valid and any issues, e.g. money isn't positive decimal, will raise and propagate exceptions as-is.
 
 ## Running the Exchanger app
 
